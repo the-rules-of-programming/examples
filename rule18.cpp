@@ -132,8 +132,9 @@ namespace rule18
 			if (searchLength < permuteLength) 
 				return false;
 
-			// Count how many times each letter shows up in the permute string. We'll
-			//  compare these counts to running counts we'll keep in the search string.
+			// Count how many times each letter shows up in the permute string.
+			//  We'll compare these counts to running counts we'll keep in the 
+			//  search string.
 
 			int permuteCounts[UCHAR_MAX] = {};
 			for (unsigned char c : permute)
@@ -141,7 +142,8 @@ namespace rule18
 				++permuteCounts[c]; 
 			}
 
-			// Make the same counts for the first possible match in the search string
+			// Make the same counts for the first possible match in the
+			//  search string
 
 			int searchCounts[UCHAR_MAX] = {};
 			int searchIndex = 0;
@@ -176,12 +178,14 @@ namespace rule18
 						break;
 				}
 
-				// Stop once we've checked all possible substrings in the search string
+				// Stop once we've checked all possible substrings in the
+				//  search string
 
 				if (searchIndex >= searchLength)
 					break;
 
-				// Update the running character counts to match the next possible match
+				// Update the running character counts to match the next
+				//  possible match
 
 				unsigned char drop = search[searchIndex - permuteLength];
 				unsigned char add = search[searchIndex];
@@ -190,8 +194,9 @@ namespace rule18
 				++searchCounts[add];
 			}
 
-			// If we make it here, then we're out of substrings and didn't find any
-			//  matching permutations, since we return immediately once they're found.
+			// If we make it here, then we're out of substrings and didn't find 
+			//  any matching permutations, since we return immediately once 
+			//  they're found.
 
 			return false;
 		}

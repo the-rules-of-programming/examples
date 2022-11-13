@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#pragma warning (disable: 4018)
+#pragma warning (disable: 4018 26451)
 
 namespace rule4
 {
@@ -323,21 +323,26 @@ namespace rule4
 
 			case Area::Kind::Point:
 				{
-					float distance = getDistance(area.m_locations[0], matchLocation);
+					float distance = getDistance(
+										area.m_locations[0], 
+										matchLocation);
 					return distance <= area.m_maxDistance;
 				}
 				break;
 
 			case Area::Kind::Street:
 				{
-					for (int index = 0; index < area.m_locations.size() - 1; ++index)
+					for (int index = 0; 
+						 index < area.m_locations.size() - 1; 
+						 ++index)
 					{
 						Location location = getClosestLocationOnSegment(
 												area.m_locations[index + 0],
 												area.m_locations[index + 1],
 												matchLocation);
 
-						if (getDistance(location, matchLocation) <= area.m_maxDistance)
+						float distance = getDistance(location, matchLocation);
+						if (distance <= area.m_maxDistance)
 							return true;
 					}
 

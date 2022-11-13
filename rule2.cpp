@@ -454,8 +454,8 @@ namespace rule2
 			bool isObjectIDValid(ObjectID objectID) const
 			{
 				return objectID.m_index >= 0 &&
-						objectID.m_index < m_indexGenerations.size() &&
-						m_indexGenerations[objectID.m_index] == objectID.m_generation;
+					objectID.m_index < m_indexGenerations.size() &&
+					m_indexGenerations[objectID.m_index] == objectID.m_generation;
 			}
 
 			int findUnusedIndex()

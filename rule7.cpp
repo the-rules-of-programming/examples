@@ -40,7 +40,10 @@ namespace rule7
 
 		void showAuthorRoyalties(const char * authorName, double amount)
 		{
-			printf(getLocalizedMessage(MessageID::RoyaltyFormat), authorName, amount);
+			printf(
+				getLocalizedMessage(MessageID::RoyaltyFormat), 
+				authorName, 
+				amount);
 		}
 	};
 

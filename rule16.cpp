@@ -71,7 +71,11 @@ namespace rule16
 		public:
 
 			Value() :
-				m_type(Type::Null), m_str(), m_number(0.0), m_object(), m_array()
+				m_type(Type::Null), 
+				m_str(), 
+				m_number(0.0), 
+				m_object(), 
+				m_array()
 				{ ; }
 
 			bool isString() const
@@ -732,7 +736,7 @@ namespace rule16
 			{
 				if (!value.isString())
 				{
-					log("expected string array for config.security.blocked_servers");
+					log("expect string array for config.security.blocked_servers");
 					continue;
 				}
 
@@ -807,7 +811,7 @@ namespace rule16
 
 			if (!value->isArray())
 			{
-				log("expected security.blocked_servers to be an Array");
+				log("expected string array for security.blocked_servers");
 				return false;
 			}
 
@@ -816,7 +820,7 @@ namespace rule16
 			{
 				if (!value.isString())
 				{
-					log("expected security.blocked_servers to be an array of strings");
+					log("expected string array for security.blocked_servers");
 					continue;
 				}
 

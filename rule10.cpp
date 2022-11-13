@@ -506,7 +506,10 @@ namespace rule10
 
 		//
 
-		class Player : public Character, public AwarenessEvents, public WeatherEvents
+		class Player : 
+			public Character, 
+			public AwarenessEvents, 
+			public WeatherEvents
 		{
 		public:
     

@@ -272,9 +272,9 @@ namespace rule13
 		{
 			// All the actual logic for mapping damage to reactions goes here.
 			//  There's a single function that does this in the Sucker Punch
-			//  engine. That function is nearly 3000 lines long and breaks a
-			//  lot of the Rules. To be fair, it's solving a very complicated
-			//  problem, but nevertheless it is not a source of personal pride.
+			//  engine. That function is nearly 3000 lines long and is not the
+			//  purest embodiment of the Rules, though to be fair it's solving
+			//  a very complicated problem.
 
 			if (damage->isArrow())
 			{
@@ -306,8 +306,9 @@ namespace rule13
 		{
 			// All the actual logic for mapping damage to reactions goes here.
 			//  There's a single function that does this in the Sucker Punch
-			//  engine. That function is nearly 3000 lines long. This is not
-			//  something we're proud of.
+			//  engine. That function is nearly 3000 lines long and is not the
+			//  purest embodiment of the Rules, though to be fair it's solving
+			//  a very complicated problem.
 
 			if (damage->isArrow())
 			{
