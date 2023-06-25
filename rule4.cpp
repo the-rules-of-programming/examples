@@ -363,8 +363,7 @@ namespace rule4
 		{
 			SignQuery() :
 				m_colors(),
-				m_location(),
-				m_distance(FLT_MAX),
+				m_area(),
 				m_textExpression(".*")
 			{
 				; 
@@ -373,13 +372,12 @@ namespace rule4
 			bool matchSign(const Sign * sign) const
 			{
 				return matchColors(m_colors, sign->color()) &&
-						matchLocation(m_location, m_distance, sign->location()) &&
-						regex_match(sign->m_text, m_textExpression);
+					   matchArea(m_area, sign->location()) &&
+					   regex_match(sign->m_text, m_textExpression);
 			}
 
 			vector<Color> m_colors;
-			Location m_location;
-			float m_distance;
+			Area m_area;
 			regex m_textExpression;
 		};
 	};

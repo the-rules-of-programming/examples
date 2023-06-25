@@ -94,16 +94,9 @@ namespace rule2
 
 		Character::~Character()
 		{
-			int index = 0;
-			for (; index < s_allCharacters.size(); ++index)
-			{
-				if (this == s_allCharacters[index])
-					break;
-			}
+			s_allCharacters.erase(s_allCharacters.begin() + m_index);
 
-			s_allCharacters.erase(s_allCharacters.begin() + index);
-
-			for (; index < s_allCharacters.size(); ++index)
+			for (int index = m_index; index < s_allCharacters.size(); ++index)
 			{
 				s_allCharacters[index]->m_index = index;
 			}

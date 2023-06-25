@@ -98,15 +98,15 @@ namespace rule3
 		}
 
 		void evaluateComplexPolynomial(
-			vector<complex<float>> & terms,
+			vector<complex<float>> & coeffs,
 			complex<float> x,
 			complex<float> * y)
 		{
 			complex<float> xN = { 1.0f, 0.0f };
 			*y = { 0.0f, 0.0f };
-			for (const complex<float> & term : terms)
+			for (const complex<float> & coeff : coeffs)
 			{
-				*y += xN * term;
+				*y += xN * coeff;
 				xN *= x;
 			}
 		}

@@ -736,7 +736,7 @@ namespace rule10
 					for (Character * spottedCharacter : record.m_spottedCharacters)
 					{
 						auto iter = find(characters.begin(), characters.end(), spottedCharacter);
-						printf(" %d", iter - characters.begin());
+						printf(" %d", static_cast<int>(iter - characters.begin()));
 					}
 					printf("\n");
 				}

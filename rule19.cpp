@@ -335,7 +335,7 @@ namespace rule19
 
                 if (chunkIndex >= m_chunks.size())
                 {
-                    m_chunks.push_back(new char[c_chunkSize]);
+                    m_chunks.push_back(ensureChunk());
                 }
 
                 if (m_index.m_byteIndex + byteCount <= c_chunkSize)

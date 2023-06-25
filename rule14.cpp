@@ -99,7 +99,7 @@ namespace rule14
             int beginIndex, 
             int endIndex)
         {
-            return Range<vector<T>::const_iterator>(
+            return Range<typename vector<T>::const_iterator>(
                         values.begin() + beginIndex, 
                         values.begin() + endIndex);
         }
